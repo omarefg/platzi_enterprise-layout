@@ -1,20 +1,12 @@
 class ElementsMapper extends HTMLElement {
-    constructor () {
-        super()
-        this.attachShadow({ mode: 'open' })
-    }
-
-    set initialize ({customElement, data, styleSheet, element}) {
-        this.customElement = customElement
+    set initialize ({data, element}) {
+        this.element = element
         this.data = data
-        this.shadowRoot.adoptedStyleSheets = [styleSheet]
-        element.styleSheet = styleSheet
         this._render()
     }
 
     _render () {
-        this.shadowRoot.innerHTML = `
-            <style>div{${this.styles}}</style>
+        this.innerHTML = `
             <div>
                 ${this.data
                     .map((item) => this._renderItem({
@@ -32,7 +24,7 @@ class ElementsMapper extends HTMLElement {
             .map(key => `${key}="${item[key]}"`).join('')
 
         return (`
-            <${self.customElement} ${attributes}></${self.customElement}>
+            <${self.element} ${attributes}></${self.element}>
         `)
     }
 }
