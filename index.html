@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="css/text" href="index.css"/>
+    <title>Empresa</title>
+</head>
+<body>
+    <header>
+        <h1>Empresa.com</h1>
+        <nav id="navbar"></nav>
+    </header>
+    <main>
+        <section>
+            <h1>Soluciones corporativas</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h2>
+        </section>
+        <section id="cards">
+        </section>
+        <section>
+            <entry-section title="¡Bienvenido!" btn="Leer más">
+                <p slot="content">Lore ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. <span>Aenean massa.</span> Cum sociis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus.<br/><br/>Nulia consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. <span>Nullam dictum</span> felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus</p>
+            </entry-section>
+            <entry-section title="Noticias Recientes" btn="Más noticias">
+                <div slot="content" id="news"></div>
+            </entry-section>
+            <entry-section title="Nuestros Servicios" btn="Leer más">
+                <ul slot="content" id="services"></ul>
+            </entry-section>
+        </section>
+    </main>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
