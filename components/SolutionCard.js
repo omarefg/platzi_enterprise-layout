@@ -1,13 +1,19 @@
-class SolutionCard extends HTMLElement {
+export default class SolutionCard extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
         this.image = this.getAttribute('image')
-        this.title = this.getAttribute('title')
+        this.head = this.getAttribute('head')
         this.text = this.getAttribute('text')
-        this.template = document.createElement('template')
-        this.template.innerHTML = this._addTemplateInnerHtml()
-        this.shadowRoot.appendChild(this.template.content.cloneNode(true))
+
+        const template = document.createElement('template')
+        template.innerHTML = this._addTemplateInnerHtml()
+
+        this.shadowRoot.appendChild(template.content.cloneNode(true))
+    }
+
+    set styleSheet (styleSheet) {
+        this.shadowRoot.adoptedStyleSheets = [styleSheet]
     }
 
     _addTemplateInnerHtml () {
@@ -18,7 +24,7 @@ class SolutionCard extends HTMLElement {
                     <img src="${this.image}"/>
                 </div>
                 <div>
-                    <h4>${this.title}</h4>
+                    <h4>${this.head}</h4>
                     <p>${this.text}</p>
                 </div>
             </div>

@@ -1,9 +1,8 @@
-export default class EntrySection extends HTMLElement {
+export default class ServiceLink extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
-        this.head = this.getAttribute('head')
-        this.btn = this.getAttribute('btn')
+        this.service = this.getAttribute('service')
 
         const template = document.createElement('template')
         template.innerHTML = this._addTemplateInnerHtml()
@@ -18,13 +17,9 @@ export default class EntrySection extends HTMLElement {
     _addTemplateInnerHtml () {
         return (`
             <style></style>
-            <div>
-                <h3>${this.head}</h3>
-                <div><slot name="content"></slot></div>
-                <button>${this.btn}</button>
-            </div>
+            <a>${this.service}</a>
         `)
     }
 }
 
-customElements.define('entry-section', EntrySection)
+customElements.define('service-link', ServiceLink)

@@ -1,4 +1,4 @@
-class NavLink extends HTMLElement {
+export default class NavLink extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
@@ -8,6 +8,10 @@ class NavLink extends HTMLElement {
         template.innerHTML = this._addTemplateInnerHtml()
 
         this.shadowRoot.appendChild(template.content.cloneNode(true))
+    }
+
+    set styleSheet (styleSheet) {
+        this.shadowRoot.adoptedStyleSheets = [styleSheet]
     }
 
     _addTemplateInnerHtml() {
