@@ -1,0 +1,36 @@
+.solution-card {
+    width: 22vw;
+    max-width: 400px;
+    min-height: 280px;
+    height: 30vw;
+    border: 1px solid var(--lines-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.solution-card__img-container {
+    width: 100%;
+    height: 63%;
+}
+
+.solution-card__img-container img {
+    object-fit: cover;
+}
+
+.solution-card__text-container {
+    padding: calc(var(--spacing-unit) * 1.2) var(--spacing-unit);
+    flex: 1;
+    background-color: white;
+}
+
+.solution-card__text-container h4 {
+    padding: 0 var(--spacing-unit) calc(var(--spacing-unit) / 2) var(--spacing-unit);
+    border-bottom: 1px solid var(--lines-color);
+    margin-bottom: var(--spacing-unit);
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.solution-card__text-container p {
+    color: var(--font-color);
+}

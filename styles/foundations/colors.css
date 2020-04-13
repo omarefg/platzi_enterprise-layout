@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #DB5130;
+    --background-color: #F3F3F3;
+    --title-color: #4F4B45;
+    --font-color: #9D9A98;
+    --lines-color: #DDDDDD;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+header {
+    border-bottom: 1px solid var(--lines-color);
+}
+
+header h1 {
+    color: var(--title-color);
+}

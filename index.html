@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="./styles/index.css"/>
     <title>Empresa</title>
 </head>
 <body>
     <header>
-        <h1>Empresa.com</h1>
+        <h1>Empresa<span class="--primary-color">.com</span></h1>
         <nav id="navbar"></nav>
     </header>
     <main>
-        <section>
+        <section class="banner">
             <h1>Soluciones corporativas</h1>
             <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h2>
         </section>
-        <section id="cards">
-        </section>
-        <section>
+        <section id="cards"></section>
+        <section class="entries-container">
             <entry-section head="¡Bienvenido!" btn="Leer más">
-                <p slot="content">Lore ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. <span>Aenean massa.</span> Cum sociis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus.<br/><br/>Nulia consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. <span>Nullam dictum</span> felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus</p>
+                <div slot="content" id="welcome-text"></div>
             </entry-section>
             <entry-section head="Noticias Recientes" btn="Más noticias">
                 <div slot="content" id="news"></div>
             </entry-section>
             <entry-section head="Nuestros Servicios" btn="Leer más">
-                <ul slot="content" id="services"></ul>
+                <div slot="content" id="services"></div>
             </entry-section>
         </section>
     </main>

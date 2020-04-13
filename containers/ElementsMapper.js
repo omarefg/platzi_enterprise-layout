@@ -1,13 +1,14 @@
 class ElementsMapper extends HTMLElement {
-    set initialize ({data, element}) {
+    set initialize ({data, element, containerClass}) {
         this.element = element
         this.data = data
+        this.containerClass = containerClass
         this._render()
     }
 
     _render () {
         this.innerHTML = `
-            <div>
+            <div class="${this.containerClass}">
                 ${this.data
                     .map((item) => this._renderItem({
                         ...item,

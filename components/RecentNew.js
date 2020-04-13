@@ -13,8 +13,8 @@ export default class RecentNew extends HTMLElement {
     _addTemplateInnerHtml () {
         return(`
             <div>
-                <h5>Publicada: ${this.date}</h5>
-                <p>${this.text}</p>
+                <h4 class="recent-new__title">Publicada: ${this.date}</h4>
+                <p class="recent-new__text --large-interline">${this.text}</p>
             </div>
         `)
     }

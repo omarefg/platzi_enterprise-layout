@@ -1,0 +1,14 @@
+.services__service {
+    display: flex;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    color: var(--primary-color);
+    cursor: pointer;
+    align-items: center;
+    font-weight: 600;
+}
+
+.services__service svg {
+    fill: var(--title-color);
+    font-size: 0.5em;
+    margin-right: calc(var(--spacing-unit) / 2);
+}

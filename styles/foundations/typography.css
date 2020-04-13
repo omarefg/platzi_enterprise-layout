@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Asap-Italic';
+    src:url('../fonts/asap-italic/Asap-Italic.ttf.woff') format('woff'),
+        url('../fonts/asap-italic/Asap-Italic.ttf.svg#Asap-Italic') format('svg'),
+        url('../fonts/asap-italic/Asap-Italic.ttf.eot'),
+        url('../fonts/asap-italic/Asap-Italic.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source-Sans-Pro';
+    src:url('../fonts/source-sans-pro/Source-Sans-Pro.ttf.woff') format('woff'),
+        url('../fonts/source-sans-pro/Source-Sans-Pro.ttf.svg#Source-Sans-Pro') format('svg'),
+        url('../fonts/source-sans-pro/Source-Sans-Pro.ttf.eot'),
+        url('../fonts/source-sans-pro/Source-Sans-Pro.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --font-size: 10px;
+    --title-font-family: 'Asap-Italic';
+    --font-family: 'Source-Sans-Pro';
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+body {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+header h1 {
+    font-family: var(--title-font-family);
+    font-weight: 300;
+    letter-spacing: -2px;
+    font-size: 3em;
+}
+
+
+@media screen and (min-width: 900px) {
+    body {
+        font-size: 14px;
+    }
+}

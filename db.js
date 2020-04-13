@@ -3,30 +3,34 @@ export default {
         {
             head: 'Consultoría',
             text: 'Duis autem velim iriure dolor in hendrerit vulputate...',
-            image: './assets/1.jpg'
+            image: './assets/1.jpg',
+            color: '#4E6E8C'
         },
         {
             head: 'Formación',
             text: 'Veliesse molestie consequat vel ilum dolore...',
-            image: './assets/2.png'
+            image: './assets/2.png',
+            color: '#649D9E'
         },
         {
             head: 'Análisis',
             text: 'Feugiat nulla facilisis at vero eros et accumsan...',
-            image: './assets/3.jpg'
+            image: './assets/3.jpg',
+            color: '#D9B166'
         },
         {
             head: 'Investigación',
             text: 'Dignissim qui blandit praent luptatum...',
-            image: './assets/4.jpg'
+            image: './assets/4.jpg',
+            color: '#B36062'
         }
     ],
     links: [
-        { text: "Inicio" },
-        { text: "Acerca" },
-        { text: "Servicios" },
-        { text: "Productos" },
-        { text: "Contacto" }
+        { text: 'Inicio', selected: true },
+        { text: 'Acerca' },
+        { text: 'Servicios' },
+        { text: 'Productos' },
+        { text: 'Contacto' }
     ],
     news: [
         {
@@ -46,5 +50,13 @@ export default {
         { service: 'Regulación de Soporte' },
         { service: 'Análisis de Riesgos' },
         { service: 'Formación Gerencial' },
+    ],
+    welcomeText: [
+        {
+            text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. <span class=%21--primary-color --bold%21>Aenean massa.</span> Cum sociis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus.'
+        },
+        {
+            text: 'Nulia consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. <span class=%21--primary-color --bold%21>Nullam dictum</span> felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus'
+        },
     ]
 }

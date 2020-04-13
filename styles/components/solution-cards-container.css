@@ -1,0 +1,7 @@
+.solution-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 22vw);
+    gap: calc(var(--spacing-unit) * 1.2);
+    justify-content: center;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}

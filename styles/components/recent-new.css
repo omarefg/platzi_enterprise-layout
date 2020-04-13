@@ -1,0 +1,10 @@
+.recent-new__title {
+    color: var(--title-color);
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.recent-new__text {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}

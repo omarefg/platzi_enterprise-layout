@@ -1,0 +1,15 @@
+.entries-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 600px));
+    margin: 0 calc(var(--spacing-unit) * 1.6) calc(var(--spacing-unit) * 1.6) calc(var(--spacing-unit) * 1.6);
+    gap: calc(var(--spacing-unit) * 1.6);
+    justify-content: center;
+    padding-bottom: calc(var(--spacing-unit) * 3);
+    border-bottom: 1px solid var(--lines-color);
+}
+
+@media screen and (min-width: 900px) {
+    .main__entries-container {
+        gap: calc(var(--spacing-unit) * 4);
+    }
+}

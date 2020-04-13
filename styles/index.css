@@ -1,0 +1,19 @@
+@import './foundations/typography.css';
+@import './foundations/spacing.css';
+@import './foundations/colors.css';
+@import './foundations/modifiers.css';
+@import './components/navbar.css';
+@import './components/banner.css';
+@import './components/solution-cards-container.css';
+@import './components/solution-card.css';
+@import './components/entries-container.css';
+@import './components/services.css';
+@import './components/recent-new.css';
+@import './components/welcome-text.css';
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,21 @@
+#navbar {
+    width: 50%;
+    max-width: 400px;
+}
+
+.navbar__links-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar__links-container__link {
+    text-decoration: none;
+    padding: calc(var(--spacing-unit) * 0.2) calc(var(--spacing-unit) * 1.5);
+    color: var(--font-color);
+}
+
+.navbar__links-container__link--selected {
+    color: white;
+    background-color: var(--primary-color);
+    font-weight: 600;
+}

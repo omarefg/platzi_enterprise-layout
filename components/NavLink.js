@@ -2,6 +2,7 @@ export default class NavLink extends HTMLElement {
     constructor() {
         super()
         this.text = this.getAttribute('text')
+        this.selected = this.getAttribute('selected')
 
         const template = document.createElement('template')
         template.innerHTML = this._addTemplateInnerHtml()
@@ -11,7 +12,12 @@ export default class NavLink extends HTMLElement {
 
     _addTemplateInnerHtml() {
         return (`
-            <a href="#">${this.text}</a>
+            <a
+                class="navbar__links-container__link${this.selected ? ' navbar__links-container__link--selected' : ''}"
+                href="#"
+            >
+                ${this.text}
+            </a>
         `)
     }
 }
