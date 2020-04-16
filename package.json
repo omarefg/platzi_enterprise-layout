@@ -1,0 +1,21 @@
+{
+  "name": "enterprise-layout",
+  "version": "0.1.0",
+  "description": "Enterprise layout is a frontend and layout project for platzi master",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarefg/enterprise-layout.git"
+  },
+  "author": "Omar Flores Grimontt <dev@omarefg.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omarefg/enterprise-layout/issues"
+  },
+  "homepage": "https://github.com/omarefg/enterprise-layout#readme"
+}

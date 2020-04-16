@@ -4,6 +4,10 @@
 
 Frontend project for Platzi Master
 
+## Init
+
+``npm start``
+
 ## Technical information
 
 ### Languages
@@ -21,6 +25,10 @@ Frontend project for Platzi Master
 Right now the project do use module type scripts which means that it only runs on a server. If you use VSCode I recommend [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ## Design information
+
+### CSS Methodology
+
+- BEM
 
 ### Mock
 
@@ -42,7 +50,9 @@ enterprise-layout
 │   db.js (Here you'll find the data that fill the project)
 │   index.html (Here you'll find the principal project layout)
 │   index.js (Here you'll find the principal project script)
+│   package.json (Here you'll find the information related to the project)
 │   README.md (You're here 😀)
+│   server.js (Here you'll find the server script to run the app)
 │
 └───assets (Here you'll find all the assets used in the project)
 │   │   1.jpg
