@@ -16,29 +16,6 @@ const mimeTypes = {
     '.eot': 'application/vnd.ms-fontobject',
 }
 
-const server = createServer((req, res) => {
-	const file = getFile(req)
-    const ext = extname(file)
-    const contentType = mimeTypes[ext]
-
-    readFile(file, (error, content) => {
-		if (error) {
-			res.writeHead(500)
-    		res.end()
-		} else {
-			res.writeHead(200, { 'Content-Type': contentType })
-			res.end(content, 'utf-8')
-		}
-    })
-})
-
-server.listen(PORT, (error) => {
-    error && printErrorAndExit(error)
-    const url = `http://localhost:${PORT}`
-    console.log(`Server running at ${url}`)
-    exec(`${getCommand()} ${url}`)
-})
-
 function getCommand () {
     let command = ''
     switch (process.platform) {
@@ -67,3 +44,26 @@ function getFile (req) {
 	}
 	return file
 }
+
+const server = createServer((req, res) => {
+	const file = getFile(req)
+    const ext = extname(file)
+    const contentType = mimeTypes[ext]
+
+    readFile(file, (error, content) => {
+		if (error) {
+			res.writeHead(500)
+    		res.end()
+		} else {
+			res.writeHead(200, { 'Content-Type': contentType })
+			res.end(content, 'utf-8')
+		}
+    })
+})
+
+server.listen(PORT, (error) => {
+    error && printErrorAndExit(error)
+    const url = `http://localhost:${PORT}`
+    console.log(`Server running at ${url}`)
+    exec(`${getCommand()} ${url}`)
+})
