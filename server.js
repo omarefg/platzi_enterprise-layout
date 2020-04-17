@@ -65,5 +65,5 @@ server.listen(PORT, (error) => {
     error && printErrorAndExit(error)
     const url = `http://localhost:${PORT}`
     console.log(`Server running at ${url}`)
-    exec(`${getCommand()} ${url}`)
+    // exec(`${getCommand()} ${url}`)
 })

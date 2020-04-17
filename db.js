@@ -26,11 +26,11 @@ export default {
         }
     ],
     links: [
-        { text: 'Inicio', selected: true },
-        { text: 'Acerca' },
-        { text: 'Servicios' },
-        { text: 'Productos' },
-        { text: 'Contacto' }
+        { text: 'Inicio', id: 'navLink-0', selected: true },
+        { text: 'Acerca', id: 'navLink-1' },
+        { text: 'Servicios', id: 'navLink-2' },
+        { text: 'Productos', id: 'navLink-3' },
+        { text: 'Contacto', id: 'navLink-4' }
     ],
     news: [
         {

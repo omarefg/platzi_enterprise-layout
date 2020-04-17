@@ -12,6 +12,10 @@
     text-decoration: none;
     padding: calc(var(--spacing-unit) * 0.2) calc(var(--spacing-unit) * 1.5);
     color: var(--font-color);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
 }
 
 .navbar__links-container__link--selected {
