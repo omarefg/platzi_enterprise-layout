@@ -3,7 +3,10 @@ const { extname } = require('path')
 const { readFile } = require('fs')
 const { exec } = require('child_process')
 
-const PORT = 3000
+const { NODE_ENV, PORT } = process.env
+
+const port = PORT || 3000
+
 const mimeTypes = {
     '.html': 'text/html',
     '.js': 'text/javascript',
@@ -61,9 +64,11 @@ const server = createServer((req, res) => {
     })
 })
 
-server.listen(PORT, (error) => {
+server.listen(port, (error) => {
     error && printErrorAndExit(error)
-    const url = `http://localhost:${PORT}`
+    const url = `http://localhost:${port}`
     console.log(`Server running at ${url}`)
-    // exec(`${getCommand()} ${url}`)
+    if (NODE_ENV !== 'test') {
+        exec(`${getCommand()} ${url}`)
+    }
 })

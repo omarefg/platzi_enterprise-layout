@@ -12,9 +12,6 @@ const cardsMapper = document.createElement('elements-mapper')
 
 const linksContainer = document.getElementById('navbar')
 const linksMapper = document.createElement('elements-mapper')
-linksContainer.addEventListener('compose', (event) => {
-    console.log('Or am I?')
-})
 
 const newsContainer = document.getElementById('news')
 const newsMapper = document.createElement('elements-mapper')

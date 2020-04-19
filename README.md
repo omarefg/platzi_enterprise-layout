@@ -4,9 +4,25 @@
 
 Frontend project for Platzi Master
 
+## Getting started
+
+First you'll have to install some dependencies
+
+``npm i``
+
 ## Init
 
+Then you're ready to run the project
+
 ``npm start``
+
+## Testing
+
+For testing run the following command.
+
+``npm test``
+
+This will run the project on port 9876 and open Cypress interface
 
 ## Technical information
 
@@ -47,6 +63,7 @@ The project is written to fit the mock dimensions, in bigger dimensions it will 
 
 ```
 enterprise-layout
+│   cypress.json (Here you'll find Cypress configuration file)
 │   db.js (Here you'll find the data that fill the project)
 │   index.html (Here you'll find the principal project layout)
 │   index.js (Here you'll find the principal project script)
@@ -72,6 +89,31 @@ enterprise-layout
 └───containers (Here you'll find all the reusable and specific containers)
 │   │   ElementsMapper.js
 │
+└───cypress (Here you'll find all related to tests)
+│   │
+│   └───fixtures (Here you'll be add all the json with the fixtures information, like global variables)
+│   │   │   colors.json
+│   │
+│   └───integration (Here you'll add all the tests you want to run)
+│   │   │
+│   │   └───components (Here you'll add all the tests related to components)
+│   │   │       EntrySection.spec.js
+│   │   │       NavLink.spec.js
+│   │   │       RecentNew.spec.js
+│   │   │       ServiceLink.spec.js
+│   │   │       SolutionCard.spec.js
+│   │   │       WelcomeText.spec.js
+│   │   │
+│   │   └───containers (Here you'll add all the tests related to containers)
+│   │           ElementsMapper.spec.js
+│   │
+│   └───plugins (Here you'll add all plugins related to Cypress)
+│   │   │   index.js
+│   │
+│   └───support (Here you'll add third party dependencies needed to extend Cypress behavior and custom commands to use in the tests)
+│   │   │   commands.js
+│   │   │   index.js
+│   │
 └───styles (Here you'll find all related to styles)
 │   │
 │   └───components (Here you'll find all styles related to components and containers)

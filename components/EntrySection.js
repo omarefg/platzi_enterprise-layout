@@ -1,4 +1,4 @@
-const stylesheet = `
+ const stylesheet = `
     .container {
         display: flex;
         flex-direction: column;
@@ -53,17 +53,12 @@ export default class EntrySection extends HTMLElement {
 
     connectedCallback() {
         const btn = this.shadowRoot.querySelector('button')
-        const btnCont = this.shadowRoot.querySelector(`#${this.btnContId}`)
-        const container = this.shadowRoot.querySelector(`.container`)
-
         btn.addEventListener('click', (event) => this._btnClickHandler(event))
-        btnCont.addEventListener('compose', (event) => {
-            console.log(' I’m not propagating ')
-            event.cancelBubble = true
-        })
-        container.addEventListener('compose', (event) => {
-            console.log('Or am I?')
-        })
+
+        const btnCont = this.shadowRoot.querySelector(`#${this.btnContId}`)
+        btnCont.addEventListener('compose', (event) => this._composeHandler(event))
+
+        this.addEventListener('changeNavbarLinksColor', (event) => this._changeNavbarLinksColorHandler(event))
     }
 
     _addTemplateInnerHtml() {
@@ -72,7 +67,9 @@ export default class EntrySection extends HTMLElement {
             <div class="container">
                 <h2>${this.head}</h2>
                 <div class="content"><slot name="content"></slot></div>
-                <div id="${this.btnContId}"><button>${this.btn}</button></div>
+                <div id="${this.btnContId}">
+                    <button id="${this.btnId}">${this.btn}</button>
+                </div>
             </div>
         `)
     }
@@ -86,6 +83,36 @@ export default class EntrySection extends HTMLElement {
         this.dispatchEvent(new CustomEvent('changeNavbarLinksColor', {
             bubbles: true
         }))
+    }
+
+    _modifyNabvarLinks() {
+        const body = document.querySelector('body')
+        body.addEventListener('changeNavbarLinksColor', () => {
+            body.querySelectorAll('.navbar__links-container__link')
+                .forEach(element => {
+                    element.style.backgroundColor = '#4f4b45'
+                    element.style.color = 'white'
+                })
+            })
+    }
+
+    _setEntrySectionButtonsToNormality() {
+        this.parentElement.querySelectorAll('entry-section')
+            .forEach((element) => {
+                const btn = element.shadowRoot.querySelector('button')
+                btn.style.backgroundColor = null
+                btn.style.color = null
+            })
+    }
+
+    _changeNavbarLinksColorHandler(event) {
+        this._modifyNabvarLinks()
+        this._setEntrySectionButtonsToNormality()
+    }
+
+    _composeHandler(event) {
+        console.log(' I’m not propagating ')
+        event.cancelBubble = true
     }
 }
 

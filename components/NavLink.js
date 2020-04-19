@@ -15,13 +15,8 @@ export default class NavLink extends HTMLElement {
     connectedCallback() {
         const btn = this.querySelector('button')
         btn.addEventListener('click', (event) => this._btnClickHandler(event))
-        this.addEventListener('compose', (event) => {
-            console.log(' I’m not propagating ')
-            event.cancelBubble = true
-        })
-        btn.addEventListener('changeNavbarLinksColor', () => {
-            console.log('entre acá')
-        })
+        this.addEventListener('compose', (event) => this._composeHandler(event))
+        this.addEventListener('changeEntrySectionBtnColor', (event) => this._changeEntrySectionBtnColorHandler(event))
     }
 
     _addTemplateInnerHtml() {
@@ -41,6 +36,37 @@ export default class NavLink extends HTMLElement {
         event.target.dispatchEvent(new CustomEvent('compose', {
             bubbles: true
         }))
+        this.dispatchEvent(new CustomEvent('changeEntrySectionBtnColor', {
+            bubbles: true
+        }))
+    }
+
+    _modifyEntrySectionButtons() {
+        const body = document.querySelector('body')
+        const entriesContainer = body.querySelector('.entries-container')
+        const entries = entriesContainer.querySelectorAll('entry-section')
+        entries.forEach(element => {
+            const entryBtn = element.shadowRoot.querySelector('button')
+            entryBtn.style.backgroundColor = '#db5130'
+        })
+    }
+
+    _setNavbarLinksButtonsToNormality() {
+        this.parentElement.querySelectorAll('nav-link').forEach((element) => {
+            const btn = element.querySelector('button')
+            btn.style.backgroundColor = null
+            btn.style.color = null
+        })
+    }
+
+    _changeEntrySectionBtnColorHandler(event) {
+        this._modifyEntrySectionButtons()
+        this._setNavbarLinksButtonsToNormality()
+    }
+
+    _composeHandler(event) {
+        console.log(' I’m not propagating ')
+        event.cancelBubble = true
     }
 }
 
