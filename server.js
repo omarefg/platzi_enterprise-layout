@@ -41,7 +41,7 @@ function printErrorAndExit (error) {
 }
 
 function getFile (req) {
-	let file = '.' + req.url
+	let file = `./${req.url}`
     if (file == './') {
         file = './index.html'
 	}
