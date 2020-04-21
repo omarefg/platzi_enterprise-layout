@@ -36,10 +36,6 @@ This will run the project on port 9876 and open Cypress interface
 
 - Web Components
 
-### Dependencies
-
-Right now the project do use module type scripts which means that it only runs on a server. If you use VSCode I recommend [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-
 ## Design information
 
 ### CSS Methodology
